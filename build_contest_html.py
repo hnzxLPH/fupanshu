@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -72,4 +74,10 @@ function download(name,text,type='application/json'){const blob=new Blob([text],
 window.addEventListener('DOMContentLoaded',()=>{loadRecords();setupDrop();});
 </script>
 </body>
-</html>
+</html>'''
+
+out = Path('/home/ubuntu/study-review-contest/study-review-standalone.contest.html')
+out.write_text(html, encoding='utf-8')
+# 同步到上传目录，便于最终交付
+Path('/home/ubuntu/upload/study-review-standalone-contest.html').write_text(html, encoding='utf-8')
+print(f'wrote {out} and /home/ubuntu/upload/study-review-standalone-contest.html, bytes={len(html.encode("utf-8"))}')
