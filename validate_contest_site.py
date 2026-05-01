@@ -4,7 +4,7 @@ import re, subprocess, sys, json
 html_path = Path('/home/ubuntu/study-review-contest/study-review-standalone.contest.html')
 html = html_path.read_text(encoding='utf-8')
 required_markers = [
-    '学习复盘小站 · 省赛版',
+    '复盘鼠 · 学习复盘数据系统',
     'handleFileUpload',
     'parseExcelFile',
     'renderDashboard',
